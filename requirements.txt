@@ -1,0 +1,4 @@
+# Silver Tier dependencies
+# (in addition to shared/requirements.txt)
+
+selenium>=4.15.0
