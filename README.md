@@ -78,6 +78,13 @@ python backend/linkedin_watcher.py --mode read
 # Run LinkedIn watcher (POST mode)
 python backend/linked_in_watcher.py --mode post
 Workflow Diagram
+flowchart TD
+    WA[WhatsApp Messages] -->|Scan + Watch| WW[whatsapp_watcher.py]
+    WW --> VA[vault/Needs_Action/WA_*.md]
+
+    LI[LinkedIn Notifications] -->|Scan + Watch| LW[linkedin_watcher.py]
+    LW --> VA
+    LW --> PA[vault/Pending_Approval/LI_*.md] -->|POST| LinkedIn
 
 Mermaid diagram will render on GitHub automatically.
 
