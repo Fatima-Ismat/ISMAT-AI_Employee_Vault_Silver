@@ -10,37 +10,36 @@ It integrates backend watchers, MCP server, and an organized Obsidian vault for 
 Project Structure
 silver/
 ├── backend/
-│   ├── whatsapp_watcher.py      # WhatsApp automation (QR session in config/)
-│   ├── linkedin_watcher.py      # LinkedIn READ + POST automation
-│   ├── gmail_watcher_oauth.py   # Gmail automation backup (OAuth-ready)
-│   └── server.py                # MCP server
+│ ├── whatsapp_watcher.py
+│ ├── linkedin_watcher.py
+│ ├── gmail_watcher_oauth.py
+│ └── server.py
 ├── config/
-│   ├── .env                     # App passwords
-│   ├── .env.example             # Template
-│   ├── whatsapp_session/        # Local session (excluded from repo)
-│   ├── linkedin_session/        # Local session (excluded from repo)
-│   └── rate_limits.json         # API rate limits
-├── vault/                        # Obsidian vault
-│   ├── Inbox/
-│   ├── Needs_Action/
-│   ├── Done/
-│   ├── Plans/
-│   ├── Pending_Approval/
-│   ├── Approved/
-│   ├── Briefings/
-│   └── Logs/
-├── docs/                         # Documentation
-├── history/                      # Logs & history
-├── scripts/                       # Helper scripts
-├── skills/                        # Skills modules (Gmail, LinkedIn, WhatsApp)
-├── specs/                         # Specifications / requirements
-├── tests/                         # Test files
-├── .venv/                         # Python environment
+│ ├── .env
+│ ├── .env.example
+│ ├── whatsapp_session/
+│ ├── linkedin_session/
+│ └── rate_limits.json
+├── vault/
+│ ├── Inbox/
+│ ├── Needs_Action/
+│ ├── Pending_Approval/
+│ ├── Approved/
+│ ├── Briefings/
+│ ├── Done/
+│ └── Logs/
+├── docs/
+├── scripts/
+├── skills/
+├── specs/
+├── tests/
+├── .venv/
 ├── .gitignore
 ├── requirements.txt
 ├── pyproject.toml
 ├── README.md
 └── uv.lock
+
 Key Features
 
 WhatsApp Automation
@@ -91,32 +90,14 @@ Workflow Diagram (Mermaid)
 ---
 
 ## Workflow Diagram
-
 ```mermaid
 flowchart TD
-    subgraph WhatsApp
-        WA[WhatsApp Messages] -->|Scan + Watch| WW[whatsapp_watcher.py]
-        WW --> VA[vault/Needs_Action/WA_*.md]
-    end
+    WA[WhatsApp Messages] -->|Scan + Watch| WW[whatsapp_watcher.py]
+    WW --> VA[vault/Needs_Action/WA_*.md]
 
-    subgraph LinkedIn
-        LI[LinkedIn Notifications] -->|Scan + Watch| LW[linkedin_watcher.py]
-        LW --> VA
-        LW --> PA[vault/Pending_Approval/LI_*.md] -->|POST| LinkedIn
-    end
-
-    subgraph Vault
-        VA --> Done[vault/Done]
-        PA --> Approved[vault/Approved]
-        VA --> Logs[vault/Logs]
-    end
-
-    subgraph MCP
-        MCP[Server / MCP Tools] --> WW
-        MCP --> LW
-        MCP --> Gmail[gmail_watcher_oauth.py]
-        Gmail --> VA
-    end
+    LI[LinkedIn Notifications] -->|Scan + Watch| LW[linkedin_watcher.py]
+    LW --> VA
+    LW --> PA[vault/Pending_Approval/LI_*.md] -->|POST| LinkedIn
 
 Mermaid diagram will render on GitHub automatically.
 
