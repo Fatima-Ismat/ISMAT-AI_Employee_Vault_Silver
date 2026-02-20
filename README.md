@@ -3,7 +3,7 @@
 The ISMAT AI Employee Vault is a personal AI assistant automating email, WhatsApp, and LinkedIn tasks.
 
 **Tier:** Silver (100% complete)  
-**Project Location:** `D:\AI_Employee_Vault_Silver\silver\`
+
 
 It integrates backend watchers, MCP server, and an organized Obsidian vault for task tracking.
 
