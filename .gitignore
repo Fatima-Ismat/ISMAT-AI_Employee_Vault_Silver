@@ -1,0 +1,176 @@
+# ============================================
+# Personal AI Employee - Git Ignore
+# ============================================
+
+# ===================
+# PYTHON
+# ===================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===================
+# VIRTUAL ENVIRONMENT
+# ===================
+.venv/
+venv/
+ENV/
+env/
+
+# ===================
+# ENVIRONMENT VARIABLES & SECRETS
+# ===================
+.env
+.env.local
+.env.*.local
+!.env.example
+config/credentials.json
+config/token.json
+*.key
+*.pem
+*.p12
+
+# ===================
+# SESSION DATA (Auto-generated)
+# ===================
+config/whatsapp_session/
+config/linkedin_session/
+config/gmail_session/
+*.session
+*.session-journal
+
+# ===================
+# LOGS & CACHE
+# ===================
+*.log
+logs/
+history/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ===================
+# IDE & EDITORS
+# ===================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ===================
+# OBSIDIAN
+# ===================
+.obsidian/
+.obsidian/workspace.json
+.obsidian/cache
+
+# ===================
+# CLAUDE & AI TOOLS
+# ===================
+.claude/
+.specify/
+CLAUDE.md
+
+# ===================
+# TESTING
+# ===================
+tests/__pycache__/
+tests/*.pyc
+
+# ===================
+# TEMPORARY FILES
+# ===================
+*.tmp
+*.temp
+*.bak
+*.backup
+nul_
+
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+
+# Environment and secrets (NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+credentials.json
+token.json
+token.pickle
+*.pem
+*.key
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node.js (for MCP servers)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Playwright
+.playwright/
+playwright-report/
+test-results/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Ignore vault content but keep structure
+vault/**/*.md
+vault/**/*.json
+vault/**/*.txt
+
+# Keep structure placeholders
+!vault/**/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# UV lock file (optional - some teams commit this)
+# uv.lock
