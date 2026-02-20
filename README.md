@@ -85,7 +85,6 @@ flowchart TD
     LI[LinkedIn Notifications] -->|Scan + Watch| LW[linkedin_watcher.py]
     LW --> VA
     LW --> PA[vault/Pending_Approval/LI_*.md] -->|POST| LinkedIn
-
 Mermaid diagram will render on GitHub automatically.
 
 GitHub Best Practices
